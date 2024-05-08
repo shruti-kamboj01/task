@@ -21,6 +21,11 @@ const userSchema = new mongoose.Schema({
     resetPasswordExpires:{
         type:Date,
     },
+    post:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Post',
+        require:true
+    }]
 })
 
 module.exports = mongoose.model("User", userSchema);
