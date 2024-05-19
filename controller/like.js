@@ -4,9 +4,9 @@ const Like = require('../model/Like');
 
 exports.likePost = async (req, res) => {
 
-  const {userId, postId} = req.body 
-
   try {
+    const {postId} = req.body 
+    const userId = req.user.id;
     // Check if the post exists
     const post = await Post.findById(postId);
     if (!post) {

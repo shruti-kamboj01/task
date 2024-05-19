@@ -22,7 +22,7 @@ app.use(fileupload({
 }));
 
 cloudinary.cloudinaryConnect();
-app.use("/api/v1", user)
+app.use("/api/v1/auth", user)
 app.use("/api/v1",post)
 
 app.get("/", (req, res) => {

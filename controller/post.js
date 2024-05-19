@@ -1,13 +1,12 @@
 const User = require("../model/User");
 const Post = require("../model/Post");
-const Comment = require("../model/Comment");
 const { uploadFileToCloudinary } = require("../utils/imageUploader");
 
 exports.createPost = async (req, res) => {
   try {
     const { caption } = req.body;
     const image = req.files.imageFile;
-    const { userId } = req.body;
+    const userId = req.user.id;
     //    console.log("userId is", userId)
     //    console.log("image is", image)
 

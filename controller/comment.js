@@ -3,10 +3,9 @@ const Comment = require("../model/Comment");
 
 exports.addComment = async (req, res) => {
   
-    const { postId,content,userId } = req.body;
-   
-  
-    try {
+     try {
+      const { postId,content } = req.body;
+      const userId = req.user.id
       // Check if the post exists
       const post = await Post.findById(postId);
       if (!post) {
